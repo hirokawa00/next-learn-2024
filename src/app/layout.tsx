@@ -1,5 +1,6 @@
 import { ThemeProvider } from '@/providers/theme-provider';
 import type { Metadata } from 'next';
+import { Noto_Sans_JP } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 
@@ -12,6 +13,11 @@ const geistMono = localFont({
   src: './fonts/GeistMonoVF.woff',
   variable: '--font-geist-mono',
   weight: '100 900',
+});
+const notoSansJP = Noto_Sans_JP({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -26,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${notoSansJP} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
