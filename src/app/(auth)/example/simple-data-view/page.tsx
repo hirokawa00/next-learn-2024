@@ -3,7 +3,6 @@ import { getServerSideData } from './server';
 
 export default async function Page() {
   const data = await getServerSideData();
-  console.log('data', data);
   return (
     <div>
       <Client user={data} />
