@@ -5,10 +5,11 @@ import { SalesCard } from '@/app/(auth)/components/sales-card';
 import { StoreCard } from '@/app/(auth)/components/store-card';
 import { UserCard } from '@/app/(auth)/components/user-card';
 
-import { HourlySalesTodayChart } from './components/hourly-sales-today-charts';
+import { HourlySalesTodayChart } from './components/hourly-sales-today-chart';
 import { ProductCategorySalesPieChart } from './components/product-category-sales-pie-chart';
 import { SalesForecastLineChart } from './components/sales-forecast-chart';
-import { WeeklySalesChart } from './components/weekly-sales-cahrt';
+
+import { WeeklySalesChart } from './components/weekly-sales-chart';
 
 export default function Home() {
   return (

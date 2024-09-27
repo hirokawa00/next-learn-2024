@@ -1,15 +1,16 @@
-'use client';
+// コンテナコンポーネント: HourlySalesTodayChartServer.tsx
+import type { ChartData } from 'chart.js';
+import { HourlySalesTodayChartClient } from './HourlySalesTodayChartClient';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+async function delay(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
-import { BarElement, CategoryScale, Chart as ChartJS, LinearScale } from 'chart.js';
-
-import { Bar } from 'react-chartjs-2';
-
-ChartJS.register(CategoryScale, LinearScale, BarElement);
-
-export function HourlySalesTodayChart() {
-  const hourlySalesData = {
+export async function HourlySalesTodayChartServer() {
+  // 6秒の遅延を追加
+  await delay(6000);
+  // サーバー側でのデータフェッチ (ここではダミーデータ)
+  const hourlySalesData: ChartData<'bar'> = {
     labels: [
       '00:00',
       '01:00',
@@ -48,18 +49,5 @@ export function HourlySalesTodayChart() {
     ],
   };
 
-  const options = {
-    maintainAspectRatio: false,
-  };
-
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Hourly Sales Today</CardTitle>
-      </CardHeader>
-      <CardContent className="w-full h-80">
-        <Bar data={hourlySalesData} options={options} />
-      </CardContent>
-    </Card>
-  );
+  return <HourlySalesTodayChartClient hourlySalesData={hourlySalesData} />;
 }
