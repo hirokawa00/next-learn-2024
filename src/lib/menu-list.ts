@@ -56,6 +56,13 @@ export function getMenuList(pathname: string): Group[] {
           icon: LogInIcon,
           submenus: [],
         },
+        {
+          href: '/example/system-health-check',
+          label: 'SystemHealthCheckDashboard',
+          active: pathname.includes('/system-health-check'),
+          icon: LogInIcon,
+          submenus: [],
+        },
       ],
     },
   ];
