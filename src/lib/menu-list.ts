@@ -1,4 +1,4 @@
-import { Grid2x2CheckIcon, HomeIcon, LogInIcon, type LucideIcon } from 'lucide-react';
+import { Activity, Grid2x2CheckIcon, HomeIcon, LogInIcon, type LucideIcon } from 'lucide-react';
 
 type Submenu = {
   href: string;
@@ -60,7 +60,7 @@ export function getMenuList(pathname: string): Group[] {
           href: '/example/system-health-check',
           label: 'SystemHealthCheckDashboard',
           active: pathname.includes('/system-health-check'),
-          icon: LogInIcon,
+          icon: Activity,
           submenus: [],
         },
       ],

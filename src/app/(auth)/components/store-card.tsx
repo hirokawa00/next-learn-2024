@@ -8,10 +8,12 @@ export async function StoreCard() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Store</CardTitle>
+        <CardTitle className="flex items-center text-2xl">
+          <Store className="w-8 h-8 text-blue-600 mr-2" />
+          Store
+        </CardTitle>
       </CardHeader>
-      <CardContent className="flex items-center justify-between">
-        <Store className="w-10 h-10 text-blue-600 mr-2" />
+      <CardContent className="flex items-center justify-end">
         <p className="text-6xl font-bold">{storeCount}</p>
       </CardContent>
     </Card>

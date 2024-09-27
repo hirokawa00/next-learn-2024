@@ -8,10 +8,12 @@ export async function SalesCard() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Sales Today</CardTitle>
+        <CardTitle className="flex items-center text-2xl">
+          <DollarSign className="w-8 h-8 text-yellow-600 mr-2" />
+          Sales Today
+        </CardTitle>
       </CardHeader>
-      <CardContent className="flex items-center justify-between">
-        <DollarSign className="w-10 h-10 text-yellow-600 mr-2" />
+      <CardContent className="flex items-center justify-end">
         <p className="text-6xl font-bold">{salesCount}</p>
       </CardContent>
     </Card>

@@ -8,10 +8,12 @@ export async function UserCard() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Users</CardTitle>
+        <CardTitle className="flex items-center text-2xl">
+          <Users className="w-8 h-8 text-purple-600 mr-2" />
+          Users
+        </CardTitle>
       </CardHeader>
-      <CardContent className="flex items-center justify-between">
-        <Users className="w-10 h-10 text-purple-600 mr-2" />
+      <CardContent className="flex items-center justify-end">
         <p className="text-6xl font-bold">{userCount}</p>
       </CardContent>
     </Card>

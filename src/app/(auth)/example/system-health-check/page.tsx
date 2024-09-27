@@ -2,6 +2,7 @@ import { ContentLayout } from '@/components/admin-panel/content-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AlertTriangle, CheckCircle, Cloud, Database, XCircle } from 'lucide-react';
 
+import { MonitoringDashboard } from './components/monitoring-dashboard';
 import { ResourceMonitoring } from './components/resource-monitoring';
 
 export default function Page() {
@@ -64,38 +65,7 @@ export default function Page() {
         </div>
 
         {/* ネットワーク確認セクション */}
-        <h2 className="text-xl font-bold mb-2">Network Monitoring</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Network Bandwidth</CardTitle>
-            </CardHeader>
-            <CardContent>{/* ネットワーク帯域幅の使用率とトレンドグラフ */}</CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Connection Time</CardTitle>
-            </CardHeader>
-            <CardContent>{/* 接続時間の大きな数値表示 */}</CardContent>
-          </Card>
-        </div>
-
-        {/* 稼働状況セクション */}
-        <h2 className="text-xl font-bold mb-2">System Status</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-          <Card>
-            <CardHeader>
-              <CardTitle>System Uptime</CardTitle>
-            </CardHeader>
-            <CardContent>{/* システム稼働時間の大きな数値表示 */}</CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Recent Error Count</CardTitle>
-            </CardHeader>
-            <CardContent>{/* 最近のエラー数の大きな数値表示 */}</CardContent>
-          </Card>
-        </div>
+        <MonitoringDashboard />
       </div>
     </ContentLayout>
   );

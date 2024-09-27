@@ -8,10 +8,12 @@ export async function ProductCard() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Product</CardTitle>
+        <CardTitle className="flex items-center text-2xl">
+          <Package className="w-8 h-8 text-green-600 mr-2" />
+          Product
+        </CardTitle>
       </CardHeader>
-      <CardContent className="flex items-center justify-between">
-        <Package className="w-10 h-10 text-green-600 mr-2" />
+      <CardContent className="flex items-center justify-end">
         <p className="text-6xl font-bold">{productCount}</p>
       </CardContent>
     </Card>

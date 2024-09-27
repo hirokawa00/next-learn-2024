@@ -20,7 +20,7 @@ export default function Home() {
         <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
 
         {/* 各種情報カード */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4">
           {/* 店舗情報 */}
           <StoreCard />
 
