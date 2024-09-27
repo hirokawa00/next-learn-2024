@@ -1,7 +1,4 @@
 import { ContentLayout } from '@/components/admin-panel/content-layout';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-
-import { Activity } from 'lucide-react';
 
 import { ProductCard } from '@/app/(auth)/components/product-card';
 import { SalesCard } from '@/app/(auth)/components/sales-card';
@@ -50,19 +47,6 @@ export default function Home() {
             {/* 売上予測 */}
             <SalesForecastLineChart />
           </div>
-        </div>
-
-        {/* システムのヘルスチェック */}
-        <div className="mt-8">
-          <Card>
-            <CardHeader className="flex items-center">
-              <Activity className="w-6 h-6 text-red-600 mr-2" />
-              <CardTitle>System Health Check</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-green-600 text-2xl font-bold">All systems operational</p>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </ContentLayout>

@@ -14,7 +14,7 @@ export const ResourceMonitoring = () => {
       {/* CPU使用率 */}
       <Card>
         <CardHeader>
-          <CardTitle>
+          <CardTitle className="flex items-center">
             <Cpu className="inline-block mr-2" /> CPU Usage
           </CardTitle>
         </CardHeader>
@@ -27,7 +27,7 @@ export const ResourceMonitoring = () => {
       {/* メモリ使用率 */}
       <Card>
         <CardHeader>
-          <CardTitle>
+          <CardTitle className="flex items-center">
             <MemoryStick className="inline-block mr-2" /> Memory Usage
           </CardTitle>
         </CardHeader>
@@ -40,7 +40,7 @@ export const ResourceMonitoring = () => {
       {/* ストレージ使用率 */}
       <Card>
         <CardHeader>
-          <CardTitle>
+          <CardTitle className="flex items-center">
             <HardDrive className="inline-block mr-2" /> Storage Usage
           </CardTitle>
         </CardHeader>

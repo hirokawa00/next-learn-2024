@@ -19,7 +19,7 @@ export const MonitoringDashboard = () => {
         {/* Network Bandwidth */}
         <Card>
           <CardHeader>
-            <CardTitle>
+            <CardTitle className="flex items-center">
               <Network className="inline-block mr-2" />
               Network Bandwidth
             </CardTitle>
@@ -33,7 +33,7 @@ export const MonitoringDashboard = () => {
         {/* Connection Time */}
         <Card>
           <CardHeader>
-            <CardTitle>
+            <CardTitle className="flex items-center">
               <Clock className="inline-block mr-2" />
               Connection Time
             </CardTitle>
@@ -50,7 +50,7 @@ export const MonitoringDashboard = () => {
         {/* System Uptime */}
         <Card>
           <CardHeader>
-            <CardTitle>
+            <CardTitle className="flex items-center">
               <TrendingUp className="inline-block mr-2" />
               System Uptime
             </CardTitle>
@@ -63,7 +63,7 @@ export const MonitoringDashboard = () => {
         {/* Recent Error Count */}
         <Card>
           <CardHeader>
-            <CardTitle>
+            <CardTitle className="flex items-center">
               <ServerCrash className="inline-block mr-2" />
               Recent Error Count
             </CardTitle>

@@ -15,12 +15,12 @@ export default function Page() {
           {/* DB接続ステータス */}
           <Card>
             <CardHeader>
-              <CardTitle>
+              <CardTitle className="flex items-center">
                 <Database className="inline-block mr-2" /> DB Connection Status
               </CardTitle>
             </CardHeader>
             <CardContent className="flex items-center justify-between">
-              <div className="text-2xl text-green-600 flex items-center">
+              <div className="text-3xl text-green-600 flex items-center font-extrabold">
                 <CheckCircle className="inline-block mr-2" />
                 接続中
               </div>
@@ -35,7 +35,7 @@ export default function Page() {
               </CardTitle>
             </CardHeader>
             <CardContent className="flex items-center justify-between">
-              <div className="text-2xl text-green-600 flex items-center">
+              <div className="text-3xl text-green-600 flex items-center font-extrabold">
                 <CheckCircle className="inline-block mr-2" />
                 正常
               </div>
@@ -50,7 +50,7 @@ export default function Page() {
               </CardTitle>
             </CardHeader>
             <CardContent className="flex items-center justify-between">
-              <div className="text-2xl text-red-700 flex items-center">
+              <div className="text-3xl text-red-700 flex items-center font-extrabold">
                 <XCircle className="inline-block mr-2" />
                 エラー数: 3
               </div>
