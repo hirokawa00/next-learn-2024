@@ -11,6 +11,27 @@ import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement);
 
+const options = {
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: false, // 凡例を非表示に設定
+    },
+  },
+  scales: {
+    x: {
+      grid: {
+        display: false, // X軸のグリッド線を非表示
+      },
+    },
+    y: {
+      grid: {
+        display: false, // Y軸のグリッド線を非表示
+      },
+    },
+  },
+};
+
 interface WeeklySalesChartClientProps {
   weeklySalesData: ChartData<'bar'>;
 }
@@ -22,10 +43,6 @@ interface WeeklySalesChartClientProps {
  * @returns
  */
 export function WeeklySalesChartClient({ weeklySalesData }: WeeklySalesChartClientProps) {
-  const options = {
-    maintainAspectRatio: false,
-  };
-
   const downloadCSV = () => {
     const csvRows: string[] = [];
     // ヘッダーを作成
