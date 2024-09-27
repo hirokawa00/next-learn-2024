@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { BarElement, CategoryScale, type ChartData, Chart as ChartJS, LinearScale } from 'chart.js';
+import { saveAs } from 'file-saver';
 import { DownloadIcon } from 'lucide-react';
 import { Bar } from 'react-chartjs-2';
 
@@ -31,17 +32,37 @@ const options = {
   },
 };
 
-interface WeeklySalesChartClientProps {
+interface HourlySalesTodayChartClientProps {
   hourlySalesData: ChartData<'bar'>;
 }
 
-export function HourlySalesTodayChartClient({ hourlySalesData }: WeeklySalesChartClientProps) {
+export function HourlySalesTodayChartClient({ hourlySalesData }: HourlySalesTodayChartClientProps) {
+  const downloadCSV = () => {
+    const csvRows: string[] = [];
+    // ヘッダーを作成
+    const headers = ['DateTime', 'Sales'];
+    csvRows.push(headers.join(','));
+
+    // データを行に追加
+    hourlySalesData.labels?.forEach((label, index) => {
+      const row = [label, hourlySalesData.datasets[0].data[index]];
+      csvRows.push(row.join(','));
+    });
+
+    // CSVデータを文字列に変換
+    const csvString = csvRows.join('\n');
+    const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+
+    // file-saverを使用してダウンロード
+    saveAs(blob, 'today_hourly_sales_data.csv');
+  };
+
   return (
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center justify-between">
-          Today Sales
-          <Button variant="ghost">
+          Today Hourly Sales
+          <Button variant="ghost" onClick={downloadCSV}>
             <DownloadIcon />
           </Button>
         </CardTitle>

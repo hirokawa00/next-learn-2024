@@ -60,7 +60,7 @@ export function WeeklySalesChartClient({ weeklySalesData }: WeeklySalesChartClie
     const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
 
     // file-saverを使用してダウンロード
-    saveAs(blob, 'hourly_sales_data.csv');
+    saveAs(blob, 'weekly_sales_data.csv');
   };
 
   return (
